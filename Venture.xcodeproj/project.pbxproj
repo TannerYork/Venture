@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44BA59969611C0DE7F4FE565 /* Pods_Venture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198F67CF2A99F703471653BF /* Pods_Venture.framework */; };
+		E589D0A0218BA41E00384418 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E589D09F218BA41E00384418 /* GameViewController.swift */; };
+		E589D0A4218BB9D500384418 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E589D0A3218BB9D500384418 /* MainNavigationController.swift */; };
+		E589D0A5218BBD7100384418 /* Delicious.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5AD5AE92187560E00801544 /* Delicious.otf */; };
 		E5AD5AD2218750BE00801544 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD5AD1218750BE00801544 /* AppDelegate.swift */; };
 		E5AD5AD9218750C300801544 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AD5AD8218750C300801544 /* Assets.xcassets */; };
 		E5AD5ADC218750C300801544 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AD5ADA218750C300801544 /* LaunchScreen.storyboard */; };
@@ -19,9 +23,14 @@
 		E5AD5AF921877D5600801544 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD5AF821877D5600801544 /* Library.swift */; };
 		E5AD5AFD21888CD300801544 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD5AFC21888CD300801544 /* GameTableViewCell.swift */; };
 		E5AD5AFF2188AD2000801544 /* PlaceholderDataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD5AFE2188AD2000801544 /* PlaceholderDataAPI.swift */; };
+		E5AD5B012189EC9B00801544 /* AddGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD5B002189EC9A00801544 /* AddGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ECF8EBF97945BC853DF04B9 /* Pods-Venture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Venture/Pods-Venture.debug.xcconfig"; sourceTree = "<group>"; };
+		198F67CF2A99F703471653BF /* Pods_Venture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Venture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E589D09F218BA41E00384418 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E589D0A3218BB9D500384418 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		E5AD5ACE218750BE00801544 /* Venture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Venture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5AD5AD1218750BE00801544 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5AD5AD8218750C300801544 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +47,8 @@
 		E5AD5AF821877D5600801544 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		E5AD5AFC21888CD300801544 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		E5AD5AFE2188AD2000801544 /* PlaceholderDataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderDataAPI.swift; sourceTree = "<group>"; };
+		E5AD5B002189EC9A00801544 /* AddGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameViewController.swift; sourceTree = "<group>"; };
+		F290D5453185EF43C36EDC8A /* Pods-Venture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venture.release.xcconfig"; path = "Pods/Target Support Files/Pods-Venture/Pods-Venture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,18 +56,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44BA59969611C0DE7F4FE565 /* Pods_Venture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E5AD5AC5218750BE00801544 = {
+		4E5D085783931903DC74AFAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				198F67CF2A99F703471653BF /* Pods_Venture.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C02D461C016D8DB9285C4F03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF8EBF97945BC853DF04B9 /* Pods-Venture.debug.xcconfig */,
+				F290D5453185EF43C36EDC8A /* Pods-Venture.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E589D0A1218BAD9E00384418 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
 				E5AD5AE92187560E00801544 /* Delicious.otf */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		E5AD5AC5218750BE00801544 = {
+			isa = PBXGroup;
+			children = (
+				E589D0A1218BAD9E00384418 /* Resourses */,
 				E5AD5AD0218750BE00801544 /* Venture */,
 				E5AD5ACF218750BE00801544 /* Products */,
+				C02D461C016D8DB9285C4F03 /* Pods */,
+				4E5D085783931903DC74AFAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,7 +127,10 @@
 		E5AD5AEC2187578D00801544 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E589D0A3218BB9D500384418 /* MainNavigationController.swift */,
 				E5AD5AEA2187578500801544 /* LibraryViewConroller.swift */,
+				E5AD5B002189EC9A00801544 /* AddGameViewController.swift */,
+				E589D09F218BA41E00384418 /* GameViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -128,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5AD5AE0218750C300801544 /* Build configuration list for PBXNativeTarget "Venture" */;
 			buildPhases = (
+				0AF198A55C6593129563ED56 /* [CP] Check Pods Manifest.lock */,
 				E5AD5ACA218750BE00801544 /* Sources */,
 				E5AD5ACB218750BE00801544 /* Frameworks */,
 				E5AD5ACC218750BE00801544 /* Resources */,
+				C45B9C0DABD0F18E3FAC23D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5AD5AF121875CC500801544 /* Main.storyboard in Resources */,
+				E589D0A5218BBD7100384418 /* Delicious.otf in Resources */,
 				E5AD5ADC218750C300801544 /* LaunchScreen.storyboard in Resources */,
 				E5AD5AD9218750C300801544 /* Assets.xcassets in Resources */,
 			);
@@ -192,11 +237,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0AF198A55C6593129563ED56 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Venture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C45B9C0DABD0F18E3FAC23D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Venture/Pods-Venture-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Venture/Pods-Venture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E5AD5ACA218750BE00801544 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5AD5B012189EC9B00801544 /* AddGameViewController.swift in Sources */,
 				E5AD5AF7218778CF00801544 /* Rating.swift in Sources */,
 				E5AD5AF921877D5600801544 /* Library.swift in Sources */,
 				E5AD5AEB2187578500801544 /* LibraryViewConroller.swift in Sources */,
@@ -205,6 +292,8 @@
 				E5AD5AFF2188AD2000801544 /* PlaceholderDataAPI.swift in Sources */,
 				E5AD5AF52187787300801544 /* Availability.swift in Sources */,
 				E5AD5AF3218777FE00801544 /* Genre.swift in Sources */,
+				E589D0A0218BA41E00384418 /* GameViewController.swift in Sources */,
+				E589D0A4218BB9D500384418 /* MainNavigationController.swift in Sources */,
 				E5AD5AFD21888CD300801544 /* GameTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +430,7 @@
 		};
 		E5AD5AE1218750C300801544 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ECF8EBF97945BC853DF04B9 /* Pods-Venture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Venture/Venture.entitlements;
@@ -360,6 +450,7 @@
 		};
 		E5AD5AE2218750C300801544 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F290D5453185EF43C36EDC8A /* Pods-Venture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Venture/Venture.entitlements;
