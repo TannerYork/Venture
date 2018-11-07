@@ -25,22 +25,30 @@ class GameViewController: UIViewController {
 
     //Placeholder values for the elements in the view
     var text = String()
-    var image = UIImage(named: "Blue")
+    var image: UIImage? = nil
     var details = String()
     var genre = String()
     var rating = String()
+    var avalability: VideoGame.Availability = .checkedIn
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if image != nil {
+            gameImage.image = image
+        } else {
+            gameImage.image = UIImage(named: "white")
+        }
         gameTitle.text = text
         gameDetails.text =
         """
         Genre: \(genre)
+        
         Rating: \(rating)
+        
         Discription: \(details)
-        
-        
         """
+        
+    
         
     }
     

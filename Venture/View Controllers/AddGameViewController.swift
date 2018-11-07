@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class AddGameViewController: UIViewController {
 
@@ -16,7 +17,10 @@ class AddGameViewController: UIViewController {
     @IBOutlet weak var detailsTextView: UITextView!
     @IBOutlet weak var ratingSegmentedControl: UISegmentedControl!
     @IBOutlet weak var genrePickerView: UIPickerView!
-    
+    @IBOutlet weak var imageButton: UIButton!
+    var imagePicker = UIImagePickerController()
+    var newImage: UIImage? = nil
+
     
 
     
@@ -26,10 +30,30 @@ class AddGameViewController: UIViewController {
         trySaveingGame()
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+    }
+    
     //Pops current view without adding a new game
     @IBAction func cancel(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func selectImage(_ sender: Any) {
+        CameraHandler.shared.showActionSheet(vc: self)
+        CameraHandler.shared.imagePickedBlock = { (image) in
+            self.newImage = image
+            self.saveImage(imageName: "\(self.newImage!)")
+        }
+    }
+
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismiss(animated: true, completion: { () -> Void in})
+        imageButton.setBackgroundImage(image, for: .normal)    }
+    
     
     
     //Possible ratings for games
@@ -56,10 +80,11 @@ class AddGameViewController: UIViewController {
      (title: "Board/Card", genre: .BoardGameOrCardGame)]
     
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+        checkPermission()
         //Removes old segemnts on the ratingSegmentControl and adds new ones based on the ratings in the segments array
         ratingSegmentedControl.removeAllSegments()
         for (index, segment) in segments.enumerated() {
@@ -81,19 +106,57 @@ class AddGameViewController: UIViewController {
         //Detials
         guard let details = detailsTextView.text, detailsTextView.text != "" else {return}
         
+        //Image
+        guard let gameImage = newImage, newImage != nil else {return}
+        print(newImage!)
         //Rating
         let rating = segments[ratingSegmentedControl.selectedSegmentIndex].rating
 
         //Genre
         let genre = genres[genrePickerView.selectedRow(inComponent: 0)].genre
         
-        let game = VideoGame(title: title, genre: genre, rating: rating, details: details)
+        let game = VideoGame(title: title, genre: genre, rating: rating, details: details, image: gameImage)
         
         Library.sharedInstance.games.append(game)
         navigationController?.popViewController(animated: true)
     }
     
+    //Checks if permision to use photots is true
+    func checkPermission() {
+        
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        
+        switch photoAuthorizationStatus {
+            
+        case .authorized: print("Access is granted by user")
+            
+        case .notDetermined:
+            
+            PHPhotoLibrary.requestAuthorization({ (newStatus) in print("status is \(newStatus)")
+                if newStatus == PHAuthorizationStatus.authorized {  print("success") } })
+            
+        case .restricted:
+            print("User do not have access to photo album.")
+            
+        case .denied:
+            print("User has denied the permission.") } }
     
+    //Saves image taken by user
+    func saveImage(imageName: String){
+        //create an instance of the FileManager
+        let fileManager = FileManager.default
+        //get the image path
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        //get the image we took with camera
+        let image = newImage
+        //get the PNG data for this image
+        let data = image!.pngData()
+        //store it in the document directory
+        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+    }
+    
+    
+
     
     
 }
@@ -119,5 +182,4 @@ extension AddGameViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 }
-
 

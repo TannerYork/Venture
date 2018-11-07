@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44BA59969611C0DE7F4FE565 /* Pods_Venture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198F67CF2A99F703471653BF /* Pods_Venture.framework */; };
+		E52C34CF218CE3E30045ACEB /* EditGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C34CE218CE3E30045ACEB /* EditGameViewController.swift */; };
 		E589D0A0218BA41E00384418 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E589D09F218BA41E00384418 /* GameViewController.swift */; };
 		E589D0A4218BB9D500384418 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E589D0A3218BB9D500384418 /* MainNavigationController.swift */; };
 		E589D0A5218BBD7100384418 /* Delicious.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5AD5AE92187560E00801544 /* Delicious.otf */; };
@@ -24,11 +25,13 @@
 		E5AD5AFD21888CD300801544 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD5AFC21888CD300801544 /* GameTableViewCell.swift */; };
 		E5AD5AFF2188AD2000801544 /* PlaceholderDataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD5AFE2188AD2000801544 /* PlaceholderDataAPI.swift */; };
 		E5AD5B012189EC9B00801544 /* AddGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD5B002189EC9A00801544 /* AddGameViewController.swift */; };
+		E5E3C4BF21910B5E000FD074 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E3C4BE21910B5E000FD074 /* CameraHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0ECF8EBF97945BC853DF04B9 /* Pods-Venture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Venture/Pods-Venture.debug.xcconfig"; sourceTree = "<group>"; };
 		198F67CF2A99F703471653BF /* Pods_Venture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Venture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52C34CE218CE3E30045ACEB /* EditGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameViewController.swift; sourceTree = "<group>"; };
 		E589D09F218BA41E00384418 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E589D0A3218BB9D500384418 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		E5AD5ACE218750BE00801544 /* Venture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Venture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +51,7 @@
 		E5AD5AFC21888CD300801544 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		E5AD5AFE2188AD2000801544 /* PlaceholderDataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderDataAPI.swift; sourceTree = "<group>"; };
 		E5AD5B002189EC9A00801544 /* AddGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameViewController.swift; sourceTree = "<group>"; };
+		E5E3C4BE21910B5E000FD074 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		F290D5453185EF43C36EDC8A /* Pods-Venture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venture.release.xcconfig"; path = "Pods/Target Support Files/Pods-Venture/Pods-Venture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +135,7 @@
 				E5AD5AEA2187578500801544 /* LibraryViewConroller.swift */,
 				E5AD5B002189EC9A00801544 /* AddGameViewController.swift */,
 				E589D09F218BA41E00384418 /* GameViewController.swift */,
+				E52C34CE218CE3E30045ACEB /* EditGameViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				E5AD5AEE2187581900801544 /* VideoGame.swift */,
 				E5AD5AF821877D5600801544 /* Library.swift */,
 				E5AD5AFE2188AD2000801544 /* PlaceholderDataAPI.swift */,
+				E5E3C4BE21910B5E000FD074 /* CameraHandler.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -263,13 +269,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Venture/Pods-Venture-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -283,12 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52C34CF218CE3E30045ACEB /* EditGameViewController.swift in Sources */,
 				E5AD5B012189EC9B00801544 /* AddGameViewController.swift in Sources */,
 				E5AD5AF7218778CF00801544 /* Rating.swift in Sources */,
 				E5AD5AF921877D5600801544 /* Library.swift in Sources */,
 				E5AD5AEB2187578500801544 /* LibraryViewConroller.swift in Sources */,
 				E5AD5AEF2187581900801544 /* VideoGame.swift in Sources */,
 				E5AD5AD2218750BE00801544 /* AppDelegate.swift in Sources */,
+				E5E3C4BF21910B5E000FD074 /* CameraHandler.swift in Sources */,
 				E5AD5AFF2188AD2000801544 /* PlaceholderDataAPI.swift in Sources */,
 				E5AD5AF52187787300801544 /* Availability.swift in Sources */,
 				E5AD5AF3218777FE00801544 /* Genre.swift in Sources */,
